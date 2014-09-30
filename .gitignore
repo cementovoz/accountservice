@@ -1,0 +1,10 @@
+build/
+service/.gradle/
+.idea/
+classes/
+out/
+*.iml
+*.class
+*.war
+*.ipr
+*.iws

@@ -1,0 +1,22 @@
+apply plugin :'java'
+apply plugin :'application'
+
+
+mainClassName = "com.bitbucket.pelenthium.accountservice.client.Launcher"
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'org.apache.httpcomponents:httpclient:4.3.5'
+    compile 'com.googlecode.json-simple:json-simple:1.1.1'
+    compile 'org.apache.logging.log4j:log4j-core:2.0.1'
+    if (org.gradle.internal.jvm.Jvm.current().getJavaVersion().isJava7()) {
+        compile files(org.gradle.internal.jvm.Jvm.current().getJavaHome().toString() + "/jre/lib/jfxrt.jar")
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.0'
+}

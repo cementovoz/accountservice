@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="400.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <bottom>
+      <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <items>
+            <Circle fx:id="statusShape" fill="RED" radius="5.0" stroke="BLACK" strokeMiterLimit="1.0" strokeType="INSIDE" strokeWidth="0.0" />
+            <Label fx:id="statusLine" textAlignment="JUSTIFY" />
+            <ProgressBar fx:id="progressBar" prefWidth="200.0" visible="false" />
+         </items>
+      </ToolBar>
+   </bottom>
+   <center>
+      <VBox prefHeight="300.0" prefWidth="250.0" BorderPane.alignment="CENTER">
+         <children>
+            <GridPane hgap="15.0">
+              <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="100.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="50.0" minWidth="10.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Кол-во читателей" textAlignment="CENTER" />
+                  <Label text="Кол-во писатeлей" GridPane.rowIndex="1" />
+                  <Slider fx:id="readerSlider" value="1.0" GridPane.columnIndex="1" />
+                  <Slider fx:id="writerSlider" minorTickCount="5" snapToTicks="true" value="1.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="readerField" maxHeight="-Infinity" maxWidth="45.0" text="1" GridPane.columnIndex="2" />
+                  <TextField fx:id="writerField" maxWidth="45.0" text="1" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Label text="Сумма добавления" GridPane.rowIndex="2" />
+                  <TextField fx:id="amountField" text="500" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label text="ID, через запятую" GridPane.rowIndex="3" />
+                  <TextField fx:id="ids" text="1,2" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" />
+               </VBox.margin>
+            </GridPane>
+            <Separator prefWidth="200.0" />
+            <GridPane>
+              <columnConstraints>
+                  <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="20.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="30.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="30.0" prefHeight="45.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="getAmount" GridPane.columnIndex="1" />
+                  <Label text="addAmount" GridPane.columnIndex="2" />
+                  <Label text="Запросов" GridPane.rowIndex="1" />
+                  <Label text="Запросов всего" GridPane.rowIndex="2" />
+                  <Label text="Статистика" />
+                  <Label fx:id="countGetPer" text="0/мин" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label fx:id="countGetAll" text="0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label fx:id="countAddPer" text="0/мин" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Label fx:id="countAddAll" text="0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+               </VBox.margin>
+            </GridPane>
+            <Separator prefWidth="200.0" />
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+               <children>
+                  <ToggleButton fx:id="startButton" mnemonicParsing="false" text="Старт" />
+                  <Button fx:id="stopButton" disable="true" mnemonicParsing="false" text="Стоп" />
+                  <Button fx:id="refreshButton" mnemonicParsing="false" text="Обновить" />
+                  <Button fx:id="clearButton" mnemonicParsing="false" text="Сбросить" />
+               </children>
+            </HBox>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets top="20.0" />
+         </padding>
+      </VBox>
+   </center>
+</BorderPane>
