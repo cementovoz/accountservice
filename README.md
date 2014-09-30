@@ -22,9 +22,9 @@ cd service/
 Screenshots:
 
 
-![First](https://github.com/pelenthium/accountservice/raw/master/img/first.png)
+![First](https://github.com/cementovoz/accountservice/raw/master/img/first.png)
 
 
-![Second](https://github.com/pelenthium/accountservice/raw/master/img/second.png)
+![Second](https://github.com/cementovoz/accountservice/raw/master/img/second.png)
 
 
