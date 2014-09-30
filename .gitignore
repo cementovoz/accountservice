@@ -1,5 +1,6 @@
 build/
 service/.gradle/
+client/.gradle/
 .idea/
 classes/
 out/
